@@ -59,6 +59,7 @@ def get_user_input(default_target):
     target_column = input(f"\n🎯 Nhập tên cột mục tiêu cần dự đoán (vd: {default_target}): ").strip()
     print("\n💡 Khi nhập các cột đầu vào, nên chọn các cột liên quan trực tiếp đến cột cần dự đoán.")
     feature_columns = input("🧩 Nhập các cột đầu vào (cách nhau bằng dấu phẩy, vd: Product,Category): ").strip().split(',')
+    print(f"\n👩‍💻 Chờ xíu nha người đẹp, máy đang xử lý nè...")
     feature_columns = [f.strip() for f in feature_columns]
     return target_column, feature_columns
 
@@ -130,12 +131,13 @@ def sort_result(df_final):
 def save_file(df_final):
     default_name = "data_filled.xlsx"
     output_file = input(f"\n💾 Nhập tên file muốn lưu (nhấn Enter để dùng mặc định: {default_name}): ").strip()
+    print(f"\n☕ Chill xíu nghen, dữ liệu đang được điền vào file ...")
     if output_file == "":
         output_file = default_name
     elif not output_file.endswith(".xlsx"):
         output_file += ".xlsx"
     df_final.to_excel(output_file, index=False)
-    print(f"\n✅ Dữ liệu đã được điền và lưu vào file: {output_file}")
+    print(f"\n✅ Done , Dữ liệu đã được điền và lưu vào file: {output_file}")
 
 # ========== MAIN ==========
 
