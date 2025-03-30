@@ -9,7 +9,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 
 def load_data():
-    file_path = input("🔍 Nhập tên file Excel (vd: data.xlsx): ").strip()
+    file_path = input("🔍 Nhập tên file Excel (file này phải ở cùng thư mục nhé) (vd: data.xlsx): ").strip()
     
     xl = pd.ExcelFile(file_path)
     print("\n📑 Danh sách sheet có trong file:")
@@ -130,8 +130,9 @@ def sort_result(df_final):
 
 def save_file(df_final):
     default_name = "data_filled.xlsx"
+    print(f"\n⚠️ Nếu trùng tên file đầu ra , nhớ đóng file cũ đi nhé")
     output_file = input(f"\n💾 Nhập tên file muốn lưu (nhấn Enter để dùng mặc định: {default_name}): ").strip()
-    print(f"\n☕ Chill xíu nghen, dữ liệu đang được điền vào file ...")
+    print(f"\n☕ Dữ liệu đang được điền vào file , người đẹp chờ xíu nha...")
     if output_file == "":
         output_file = default_name
     elif not output_file.endswith(".xlsx"):
