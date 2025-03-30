@@ -7,10 +7,10 @@ from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 
 # ===== Cấu hình cố định =====
-input_file = "data_input.xlsx"
-output_file = "data_output.xlsx"
-target_column = "Color"
-feature_columns = ["Product", "Category"]
+input_file = "data_input.xlsx" # file đầu vào
+output_file = "data_output.xlsx" # file đầu ra  
+target_column = "Color" # cột cần dự đoán
+feature_columns = ["Product", "Category"] # cột đầu vào
 
 # ===== Đọc dữ liệu =====
 df = pd.read_excel(input_file)
